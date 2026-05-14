@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scenes\Scripts\createEnemy.cs" />
     <Compile Include="Assets\Scenes\Scripts\movement.cs" />
     <Compile Include="Assets\Scenes\Scripts\prefabTrigger.cs" />
+    <Compile Include="Assets\Scenes\Scripts\PickupEventListener.cs" />
     <Compile Include="Assets\Scenes\Scripts\enemyfollow.cs" />
     <Compile Include="Assets\Scenes\Scripts\ballroll.cs" />
     <Compile Include="Assets\Scenes\Scripts\deathScreen.cs" />
@@ -83,10 +84,12 @@
     <Compile Include="Assets\Scenes\Scripts\pickUpSpawn.cs" />
     <Compile Include="Assets\Scenes\Scripts\PlayerSlowTime.cs" />
     <Compile Include="Assets\Scenes\Scripts\deathScene.cs" />
+    <Compile Include="Assets\Scenes\Scripts\IPickup.cs" />
     <Compile Include="Assets\Scenes\Scripts\Score.cs" />
     <Compile Include="Assets\Scenes\Scripts\ShieldPickupSpawner.cs" />
     <Compile Include="Assets\Scenes\Scripts\FinalScoreDisplay.cs" />
     <Compile Include="Assets\Scenes\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scenes\Scripts\PickupEvents.cs" />
     <Compile Include="Assets\Scenes\Scripts\SlowTimePickup.cs" />
     <Compile Include="Assets\Scenes\Scripts\PlayerShield.cs" />
   </ItemGroup>
