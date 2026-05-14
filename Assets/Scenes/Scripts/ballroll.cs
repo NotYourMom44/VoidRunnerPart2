@@ -6,7 +6,7 @@ public class Ballroll : MonoBehaviour
 {
     public float speed;
     public GameObject speedActivity;
-   
+
 
     public Rigidbody rb2;
     public int power;
@@ -44,8 +44,24 @@ public class Ballroll : MonoBehaviour
 
     public void stopMove()
     {
-       // rb.velocity = Vector3.zero;
+        // rb.velocity = Vector3.zero;
         //rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
+    }
+
+    public void StartSpeedBoost(float amount, float duration)
+    {
+        StartCoroutine(SpeedBoostRoutine(amount, duration));
+    }
+
+    private IEnumerator SpeedBoostRoutine(float amount, float duration)
+    {
+        speed += amount;
+        Debug.Log("Speed boost started");
+
+        yield return new WaitForSeconds(duration);
+
+        speed -= amount;
+        Debug.Log("Speed boost ended");
     }
 }

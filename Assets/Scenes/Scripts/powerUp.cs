@@ -1,45 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class powerUp : MonoBehaviour
 {
-    public float speed;
-    public float time;
-    public float VisibilityTime = 2f;
-    public AudioSource pickUp;
-    public AudioSource pickDown;
-
-
+    public float speedBoostAmount = 2f;
+    public float boostDuration = 5f;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Speed"))
+        if (other.CompareTag("Player"))
         {
-            pickUp.Play();
+            Ballroll playerMovement = other.GetComponent<Ballroll>();
 
-            if (Time.time > 2f)
+            if (playerMovement != null)
             {
-                speed = speed * time;
-                Debug.Log("Speed Increased");
-                Destroy(other.gameObject);
+                playerMovement.StartSpeedBoost(speedBoostAmount, boostDuration);
             }
 
+            Destroy(gameObject);
         }
-
-       /* if (other.CompareTag("Slow"))
-        {
-            pickDown.Play();
-
-            if (Time.time > 2f)
-            {
-                speed = speed * time;
-                Debug.Log("Speed Decreased");
-                Destroy(other.gameObject);
-            }
-
-        } */
-
     }
-     
 }

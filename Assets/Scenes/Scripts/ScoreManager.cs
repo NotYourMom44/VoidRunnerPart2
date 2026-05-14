@@ -1,39 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI; // it tells the script to load UI elements
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
+    public TMP_Text scoreText;
+    public TMP_Text hiScoreText;
 
-    public Text scoreText;
-    public Text hiScoreText;
     public static int scoreCount;
     public static int hiScoreCount;
-    //public int score;
 
-    // Start is called before the first frame update
     void Start()
     {
+        scoreCount = 0;
+
         if (PlayerPrefs.HasKey("HighScore"))
         {
-            hiScoreCount = PlayerPrefs.GetInt("HiScore");
+            hiScoreCount = PlayerPrefs.GetInt("HighScore");
         }
     }
 
-
-    // Update is called once per frame
     void Update()
     {
-
         if (scoreCount > hiScoreCount)
         {
-            hiScoreCount = scoreCount ;
+            hiScoreCount = scoreCount;
             PlayerPrefs.SetInt("HighScore", hiScoreCount);
         }
 
-        scoreText.text = scoreCount.ToString();
-        hiScoreText.text = hiScoreCount.ToString();
+        scoreText.text = "Score: " + scoreCount;
+        hiScoreText.text = "High Score: " + hiScoreCount;
     }
 }

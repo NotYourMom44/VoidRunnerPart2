@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scenes\Scripts\pickUpSpawn.cs" />
     <Compile Include="Assets\Scenes\Scripts\deathScene.cs" />
     <Compile Include="Assets\Scenes\Scripts\Score.cs" />
+    <Compile Include="Assets\Scenes\Scripts\FinalScoreDisplay.cs" />
     <Compile Include="Assets\Scenes\Scripts\ScoreManager.cs" />
   </ItemGroup>
   <ItemGroup>

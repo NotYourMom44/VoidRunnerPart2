@@ -1,25 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class deathScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void restartScene()
     {
-        SceneManager.LoadScene(2);
-        Debug.Log("Game Restarted");
+        Debug.Log("Restart button clicked");
+        ScoreManager.scoreCount = 0;
+        SceneManager.LoadScene("SampleScene");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            restartScene();
+        }
     }
 }
