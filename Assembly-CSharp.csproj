@@ -79,11 +79,13 @@
     <Compile Include="Assets\UI button pack 2\Scene\CreateObj.cs" />
     <Compile Include="Assets\Scenes\Scripts\powerUp.cs" />
     <Compile Include="Assets\Scenes\Scripts\pickUpSpawn.cs" />
+    <Compile Include="Assets\Scenes\Scripts\PlayerSlowTime.cs" />
     <Compile Include="Assets\Scenes\Scripts\deathScene.cs" />
     <Compile Include="Assets\Scenes\Scripts\Score.cs" />
     <Compile Include="Assets\Scenes\Scripts\ShieldPickupSpawner.cs" />
     <Compile Include="Assets\Scenes\Scripts\FinalScoreDisplay.cs" />
     <Compile Include="Assets\Scenes\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scenes\Scripts\SlowTimePickup.cs" />
     <Compile Include="Assets\Scenes\Scripts\PlayerShield.cs" />
   </ItemGroup>
   <ItemGroup>
