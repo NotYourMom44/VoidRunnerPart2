@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class PlayerShield : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerShield : MonoBehaviour
     public GameObject shieldVisual;
 
     private Coroutine shieldRoutine;
+
+    public TMP_Text shieldStatusText;
 
     public void ActivateShield()
     {
@@ -24,21 +27,25 @@ public class PlayerShield : MonoBehaviour
         shieldActive = true;
 
         if (shieldVisual != null)
-        {
             shieldVisual.SetActive(true);
+
+        float timer = shieldDuration;
+
+        while (timer > 0)
+        {
+            if (shieldStatusText != null)
+                shieldStatusText.text = "Shield: " + timer.ToString("F1");
+
+            timer -= Time.deltaTime;
+            yield return null;
         }
-
-        Debug.Log("Shield activated");
-
-        yield return new WaitForSeconds(shieldDuration);
 
         shieldActive = false;
 
         if (shieldVisual != null)
-        {
             shieldVisual.SetActive(false);
-        }
 
-        Debug.Log("Shield ended");
+        if (shieldStatusText != null)
+            shieldStatusText.text = "Shield: Ready";
     }
 }

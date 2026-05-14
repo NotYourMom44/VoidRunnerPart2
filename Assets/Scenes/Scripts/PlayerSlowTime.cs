@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class PlayerSlowTime : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerSlowTime : MonoBehaviour
     public float slowScale = 0.5f;
 
     private Coroutine slowRoutine;
+
+    public TMP_Text slowTimeStatusText;
 
     public void ActivateSlowTime()
     {
@@ -25,14 +28,22 @@ public class PlayerSlowTime : MonoBehaviour
         Time.timeScale = slowScale;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
-        Debug.Log("Slow time activated");
+        float timer = slowDuration;
 
-        yield return new WaitForSecondsRealtime(slowDuration);
+        while (timer > 0)
+        {
+            if (slowTimeStatusText != null)
+                slowTimeStatusText.text = "Slow Time: " + timer.ToString("F1");
+
+            timer -= Time.unscaledDeltaTime;
+            yield return null;
+        }
 
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;
         slowTimeActive = false;
 
-        Debug.Log("Slow time ended");
+        if (slowTimeStatusText != null)
+            slowTimeStatusText.text = "Slow Time: Ready";
     }
 }
