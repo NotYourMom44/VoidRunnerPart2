@@ -14,13 +14,16 @@ public class gameOver : MonoBehaviour
     public Material invisible;
 
     public Ballroll br;
-    
-  
-   
+
+    private PlayerShield playerShield;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         br = GetComponent<Ballroll>();
+        playerShield = GetComponent<PlayerShield>();
     }
 
     void GameOver()
@@ -38,33 +41,31 @@ public class gameOver : MonoBehaviour
 
         if (other.gameObject.CompareTag("Death"))
         {
-            
+            if (playerShield != null && playerShield.shieldActive)
+            {
+                Debug.Log("Shield blocked obstacle hit");
+                return;
+            }
+
             br.stopMove();
-            
-            Debug.Log("You hit an obstacle died");
+
+            Debug.Log("You hit an obstacle and died");
+
             ChangeMaterial();
             GameOver();
-            
-
-            
-
-
-            //SceneManager.LoadSceneAsync(3);
-
-
         }
 
-       /* if (other.gameObject.CompareTag("Boss Enemies"))
-        {
-            Debug.Log("The enemy got you, you're dead");
+        /* if (other.gameObject.CompareTag("Boss Enemies"))
+         {
+             Debug.Log("The enemy got you, you're dead");
 
-            Destroy(gameObject);
-           
-            SceneManager.LoadSceneAsync(3);
-            
+             Destroy(gameObject);
+
+             SceneManager.LoadSceneAsync(3);
 
 
-        } */
+
+         } */
     }
 
 
