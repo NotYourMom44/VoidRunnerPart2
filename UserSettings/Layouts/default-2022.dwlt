@@ -784,9 +784,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.666584, y: -35.244766, z: 90}
+    m_Target: {x: 0, y: 2.74, z: 0}
     speed: 2
-    m_Value: {x: -5.666584, y: -35.244766, z: 90}
+    m_Value: {x: 0, y: 2.74, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -834,11 +834,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.0862728, y: -0.021517852, z: 0.0018648076, w: 0.9960467}
     speed: 2
-    m_Value: {x: -0.0862728, y: 0.021517852, z: -0.0018648074, w: -0.9960467}
+    m_Value: {x: 0.086271994, y: -0.021517653, z: 0.0018647902, w: 0.9960375}
   m_Size:
-    m_Target: 59.35559
+    m_Target: 1.1452563
     speed: 2
-    m_Value: 59.35559
+    m_Value: 1.1452563
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -942,7 +942,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/Prefabs
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -950,15 +950,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 41
   m_LastFolders:
-  - Assets/Scenes/Prefabs
+  - Assets/Scenes
   m_LastFoldersGridSize: 41
   m_LastProjectPath: C:\Users\esihl\OneDrive\Desktop\VoidRunnerEndlessRunner\VOID-RUNNER-v3.0-Audio\voidRunner3.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 87}
-    m_SelectedIDs: ae630000
-    m_LastClickedID: 25518
+    m_SelectedIDs: 62630000
+    m_LastClickedID: 25442
     m_ExpandedIDs: 000000005e630000606300006263000064630000666300006863000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1300,7 +1300,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 1748.8002
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
