@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scenes\Scripts\camera.cs" />
     <Compile Include="Assets\Scenes\Scripts\ShieldPickup.cs" />
     <Compile Include="Assets\Sci-Fi UI\Demo_Assets\scripts\GUI_Demo.cs" />
+    <Compile Include="Assets\Scenes\Scripts\LevelPickupSpawner.cs" />
     <Compile Include="Assets\Scenes\Scripts\gameStart.cs" />
     <Compile Include="Assets\Scenes\Scripts\pickUpSpawnBoss.cs" />
     <Compile Include="Assets\Scenes\Scripts\BossProjectile.cs" />

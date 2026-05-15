@@ -30,7 +30,7 @@ public class pickUpGeneration : MonoBehaviour
                     Random.Range(collider.bounds.min.z, collider.bounds.max.z)
                 );
 
-            point.y = -2;
+            point.y = -4;
 
             //point.y = 1;//makes the coins spawn on the ground
             return point;
