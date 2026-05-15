@@ -17,4 +17,10 @@ public class deathScene : MonoBehaviour
             restartScene();
         }
     }
+
+    public void BackToMainMenu()
+    {
+        ScoreManager.scoreCount = 0;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+    }
 }
