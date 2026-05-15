@@ -18,6 +18,8 @@ public class prefabTrigger : MonoBehaviour
 
     private float currentCycleY = 0f;
 
+    public BossProjectileSpawner bossSpawner;
+
     private GameObject[] levelPattern;
 
     void Start()
@@ -51,6 +53,18 @@ public class prefabTrigger : MonoBehaviour
     void SpawnNextLevel()
     {
         GameObject levelToSpawn = levelPattern[loopIndex];
+
+        if (bossSpawner != null)
+        {
+            if (levelToSpawn == level3Prefab)
+            {
+                bossSpawner.StartBossAttacks();
+            }
+            else
+            {
+                bossSpawner.StopBossAttacks();
+            }
+        }
 
         Vector3 spawnPosition = new Vector3(
             0.5f,
