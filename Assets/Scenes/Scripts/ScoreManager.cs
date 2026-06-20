@@ -9,25 +9,42 @@ public class ScoreManager : MonoBehaviour
     public static int scoreCount;
     public static int hiScoreCount;
 
+    private const string HighScoreKey = "HighScore";
+
     void Start()
     {
         scoreCount = 0;
-
-        if (PlayerPrefs.HasKey("HighScore"))
-        {
-            hiScoreCount = PlayerPrefs.GetInt("HighScore");
-        }
+        hiScoreCount = PlayerPrefs.GetInt(HighScoreKey, 0);
+        UpdateUI();
     }
 
     void Update()
     {
+        UpdateUI();
+    }
+
+    public static void AddScore(int amount)
+    {
+        scoreCount += amount;
+
         if (scoreCount > hiScoreCount)
         {
             hiScoreCount = scoreCount;
-            PlayerPrefs.SetInt("HighScore", hiScoreCount);
+            PlayerPrefs.SetInt(HighScoreKey, hiScoreCount);
+            PlayerPrefs.Save();
+        }
+    }
+
+    private void UpdateUI()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + scoreCount;
         }
 
-        scoreText.text = "Score: " + scoreCount;
-        hiScoreText.text = "High Score: " + hiScoreCount;
+        if (hiScoreText != null)
+        {
+            hiScoreText.text = "High Score: " + hiScoreCount;
+        }
     }
 }
