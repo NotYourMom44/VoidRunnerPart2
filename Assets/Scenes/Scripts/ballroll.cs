@@ -24,16 +24,21 @@ public class Ballroll : MonoBehaviour
     void Update()
     {
         rb = GetComponent<Rigidbody>();
+
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
-        Vector3 roll = new Vector3(x: moveHorizontal, y: 0, z: moveVertical);
-        Vector3 Jump = new Vector3(x: 0, y: 0, z: moveVertical);
 
-        rb.AddForce(roll * (speed * Time.deltaTime));
-        rb.AddForce(Jump * (speed * Time.deltaTime));
+        Vector3 movement = new Vector3(
+            moveHorizontal,
+            0,
+            1f
+        );
 
-        if (Input.GetKeyDown("space"))
-        { jumpSFX.Play(); }
+        rb.AddForce(movement * (speed * Time.deltaTime));
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpSFX.Play();
+        }
     }
 
 
