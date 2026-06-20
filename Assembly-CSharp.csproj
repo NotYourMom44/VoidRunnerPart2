@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scenes\Scripts\ShieldPickup.cs" />
     <Compile Include="Assets\Sci-Fi UI\Demo_Assets\scripts\GUI_Demo.cs" />
     <Compile Include="Assets\Scenes\Scripts\LevelPickupSpawner.cs" />
+    <Compile Include="Assets\Scenes\Scripts\GameEvents.cs" />
     <Compile Include="Assets\Scenes\Scripts\gameStart.cs" />
     <Compile Include="Assets\Scenes\Scripts\PlayerSpeedBoost.cs" />
     <Compile Include="Assets\Scenes\Scripts\pickUpSpawnBoss.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Assets\Scenes\Scripts\PickupEvents.cs" />
     <Compile Include="Assets\Scenes\Scripts\SlowTimePickup.cs" />
     <Compile Include="Assets\Scenes\Scripts\PlayerShield.cs" />
+    <Compile Include="Assets\Scenes\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -48,6 +48,8 @@ public class BossProjectileSpawner : MonoBehaviour
         bossActive = true;
         attackTimer = 0f;
         Debug.Log("Boss attacks started");
+
+        GameEvents.BossSpawned();
     }
 
     public void StopBossAttacks()
@@ -55,6 +57,8 @@ public class BossProjectileSpawner : MonoBehaviour
         bossActive = false;
         attackTimer = 0f;
         Debug.Log("Boss attacks stopped");
+
+        GameEvents.BossBeaten();
     }
 
     private void SpawnProjectile()

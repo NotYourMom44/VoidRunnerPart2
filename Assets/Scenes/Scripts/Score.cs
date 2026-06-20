@@ -15,6 +15,8 @@ public class Score : MonoBehaviour
 
             ScoreManager.AddScore(1);
 
+            GameEvents.ObstaclePassed();
+
             Debug.Log("Obstacle Passed | Score: " + ScoreManager.scoreCount);
         }
     }
