@@ -1,56 +1,49 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ballroll : MonoBehaviour
 {
-    public float speed;
-    public GameObject speedActivity;
+    public float speed = 12f;
+    public float sideSpeed = 8f;
 
-
-    public Rigidbody rb2;
-    public int power;
     public AudioSource jumpSFX;
 
-    public GameObject player;
-
     private Rigidbody rb;
+    private bool canMove = true;
 
-
-    // Start is called before the first frame update
-
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        if (!canMove) return;
 
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
-        Vector3 movement = new Vector3(
-            moveHorizontal,
-            0,
-            1f
+        Vector3 targetVelocity = new Vector3(
+            moveHorizontal * sideSpeed,
+            rb.velocity.y,
+            speed
         );
 
-        rb.AddForce(movement * (speed * Time.deltaTime));
+        rb.velocity = targetVelocity;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            jumpSFX.Play();
+            if (jumpSFX != null)
+            {
+                jumpSFX.Play();
+            }
         }
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-
     }
 
     public void stopMove()
     {
-        // rb.velocity = Vector3.zero;
-        //rb.angularVelocity = Vector3.zero;
+        canMove = false;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
     }
 
@@ -62,11 +55,11 @@ public class Ballroll : MonoBehaviour
     private IEnumerator SpeedBoostRoutine(float amount, float duration)
     {
         speed += amount;
-        Debug.Log("Speed boost started");
+        Debug.Log("Speed boost started. Current speed: " + speed);
 
         yield return new WaitForSeconds(duration);
 
         speed -= amount;
-        Debug.Log("Speed boost ended");
+        Debug.Log("Speed boost ended. Current speed: " + speed);
     }
 }

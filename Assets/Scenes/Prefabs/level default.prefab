@@ -158,6 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupPrefabs:
+  - {fileID: 1289543790355709915, guid: 9aef744cdbd06264298cd58af87b1a47, type: 3}
+  - {fileID: 1289543790355709915, guid: a08dba95131c7ca48ae811375b1beb1c, type: 3}
   - {fileID: 6287953604210959080, guid: 7c4becabc9693fe4287d40d9038b249d, type: 3}
   pickupPoints:
   - {fileID: 6417604099471318787}

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Sci-Fi UI\Demo_Assets\scripts\GUI_Demo.cs" />
     <Compile Include="Assets\Scenes\Scripts\LevelPickupSpawner.cs" />
     <Compile Include="Assets\Scenes\Scripts\gameStart.cs" />
+    <Compile Include="Assets\Scenes\Scripts\PlayerSpeedBoost.cs" />
     <Compile Include="Assets\Scenes\Scripts\pickUpSpawnBoss.cs" />
     <Compile Include="Assets\Scenes\Scripts\BossProjectile.cs" />
     <Compile Include="Assets\Scenes\Scripts\coloumnGeneration.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scenes\Scripts\createEnemy.cs" />
     <Compile Include="Assets\Scenes\Scripts\movement.cs" />
     <Compile Include="Assets\Scenes\Scripts\prefabTrigger.cs" />
+    <Compile Include="Assets\Scenes\Scripts\SpeedPickup.cs" />
     <Compile Include="Assets\Scenes\Scripts\PickupEventListener.cs" />
     <Compile Include="Assets\Scenes\Scripts\enemyfollow.cs" />
     <Compile Include="Assets\Scenes\Scripts\ballroll.cs" />
