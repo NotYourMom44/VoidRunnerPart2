@@ -54,11 +54,14 @@ public class BossProjectileSpawner : MonoBehaviour
 
     public void StopBossAttacks()
     {
+        if (!bossActive) return;
+
         bossActive = false;
         attackTimer = 0f;
-        Debug.Log("Boss attacks stopped");
 
         GameEvents.BossBeaten();
+
+        Debug.Log("Boss attacks stopped");
     }
 
     private void SpawnProjectile()

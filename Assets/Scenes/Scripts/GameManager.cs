@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 
     public int pickupsCollected;
     public int obstaclesPassed;
-    public int bossesBeaten;
+    public int levelsBeaten;
 
     private void Awake()
     {
@@ -59,7 +59,8 @@ public class GameManager : MonoBehaviour
 
     private void HandleBossBeaten()
     {
-        bossesBeaten++;
-        Debug.Log("GameManager heard boss beaten event. Bosses beaten: " + bossesBeaten);
+        levelsBeaten++;
+
+        Debug.Log("Level completed. Levels beaten: " + levelsBeaten);
     }
 }
