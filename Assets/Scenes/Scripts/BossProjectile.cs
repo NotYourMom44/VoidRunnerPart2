@@ -1,27 +1,29 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossProjectile : MonoBehaviour
 {
     public float speed = 15f;
     public float lifeTime = 8f;
 
-    private Transform target;
+    private Vector3 moveDirection;
+    private bool hasDirection = false;
 
     public void SetTarget(Transform playerTarget)
     {
-        target = playerTarget;
+        Vector3 targetPosition = playerTarget.position;
+
+        moveDirection = (targetPosition - transform.position).normalized;
+        hasDirection = true;
+
         Destroy(gameObject, lifeTime);
     }
 
     void Update()
     {
-        if (target == null) return;
+        if (!hasDirection) return;
 
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            target.position,
-            speed * Time.deltaTime
-        );
+        transform.position += moveDirection * speed * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,7 +40,7 @@ public class BossProjectile : MonoBehaviour
             }
 
             Debug.Log("Boss projectile hit player");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("deathScene");
+            SceneManager.LoadScene("deathScene");
         }
     }
 }
