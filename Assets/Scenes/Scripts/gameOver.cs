@@ -36,6 +36,11 @@ public class gameOver : MonoBehaviour
 
         Debug.Log("You died");
 
+        if (DatabaseManager.Instance != null)
+        {
+            DatabaseManager.Instance.SavePlayerData();
+        }
+
         SceneManager.LoadSceneAsync(2);
     }
 

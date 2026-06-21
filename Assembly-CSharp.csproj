@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scenes\Scripts\PlayerSpeedBoost.cs" />
     <Compile Include="Assets\Scenes\Scripts\pickUpSpawnBoss.cs" />
     <Compile Include="Assets\Scenes\Scripts\BossProjectile.cs" />
+    <Compile Include="Assets\Scenes\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scenes\Scripts\coloumnGeneration.cs" />
     <Compile Include="Assets\Scenes\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scenes\Scripts\createEnemy.cs" />
@@ -94,6 +95,9 @@
     <Compile Include="Assets\Scenes\Scripts\ShieldPickupSpawner.cs" />
     <Compile Include="Assets\Scenes\Scripts\FinalScoreDisplay.cs" />
     <Compile Include="Assets\Scenes\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scenes\Scripts\DatabaseManager.cs" />
+    <Compile Include="Assets\Scenes\Scripts\SceneLoader.cs" />
+    <Compile Include="Assets\Scenes\Scripts\MetricsDisplay.cs" />
     <Compile Include="Assets\Scenes\Scripts\PickupEvents.cs" />
     <Compile Include="Assets\Scenes\Scripts\SlowTimePickup.cs" />
     <Compile Include="Assets\Scenes\Scripts\PlayerShield.cs" />
