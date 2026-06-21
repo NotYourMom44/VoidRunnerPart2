@@ -17,6 +17,8 @@ public class gameOver : MonoBehaviour
 
     private PlayerShield playerShield;
 
+    private bool isGameOver = false;
+
 
 
     // Start is called before the first frame update
@@ -28,12 +30,13 @@ public class gameOver : MonoBehaviour
 
     void GameOver()
     {
-         Debug.Log("You died");
-           
-            SceneManager.LoadSceneAsync(2);
-     
+        if (isGameOver) return;
 
+        isGameOver = true;
 
+        Debug.Log("You died");
+
+        SceneManager.LoadSceneAsync(2);
     }
 
     public void OnCollisionEnter (Collision other)
