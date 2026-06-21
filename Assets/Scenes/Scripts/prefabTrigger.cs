@@ -13,22 +13,20 @@ public class prefabTrigger : MonoBehaviour
     public float spawnDistance = 99f;
     public float levelDestroyTime = 20f;
 
-
-    private int loopIndex = 0;
-
-    private float currentCycleY = 0f;
-
     public BossProjectileSpawner bossSpawner;
 
-    private GameObject[] levelPattern;
+    private int loopIndex = 0;
+    private float currentCycleY = 0f;
+
+    private GameObject[] introPattern;
 
     void Start()
     {
-        levelPattern = new GameObject[]
+        introPattern = new GameObject[]
         {
-            level1Prefab, level1Prefab,
-            level2Prefab, level2Prefab, level2Prefab,
-            level3Prefab, level3Prefab, level3Prefab, level3Prefab, level3Prefab, level3Prefab
+            level1Prefab,
+            level2Prefab,
+            level3Prefab
         };
 
         if (playerTransform == null)
@@ -52,7 +50,16 @@ public class prefabTrigger : MonoBehaviour
 
     void SpawnNextLevel()
     {
-        GameObject levelToSpawn = levelPattern[loopIndex];
+        GameObject levelToSpawn;
+
+        if (loopIndex < introPattern.Length)
+        {
+            levelToSpawn = introPattern[loopIndex];
+        }
+        else
+        {
+            levelToSpawn = Random.value > 0.5f ? level2Prefab : level3Prefab;
+        }
 
         if (bossSpawner != null)
         {
@@ -67,14 +74,14 @@ public class prefabTrigger : MonoBehaviour
         }
 
         Vector3 spawnPosition = new Vector3(
-            0.5f,
-            currentCycleY,
-            playerTransform.position.z + spawnDistance
-        );
+    0.5f,
+    0f,
+    playerTransform.position.z + spawnDistance
+);
 
         if (levelToSpawn == level3Prefab)
         {
-            spawnPosition.y = currentCycleY - 4f;
+            spawnPosition.y = -4f;
         }
 
         GameObject newLevel = Instantiate(levelToSpawn, spawnPosition, Quaternion.identity);
@@ -91,14 +98,5 @@ public class prefabTrigger : MonoBehaviour
 
         loopIndex++;
 
-        if (loopIndex >= levelPattern.Length)
-        {
-            loopIndex = 0;
-
-            currentCycleY = playerTransform.position.y;
-        }
     }
 }
-
-
-
