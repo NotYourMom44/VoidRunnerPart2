@@ -1,60 +1,68 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class pickUpGeneration : MonoBehaviour
 {
-   
     public GameObject coloumn;
-    public Collider levelCollider;
-    public float coloumnDestroy = 20f;
-    public int objectNo = 20;
-    // Start is called before the first frame update
+    public float columnDestroy = 20f;
+    public int objectNo = 8;
+
+    public float columnY = -4f;
+    public float minimumDistance = 8f;
+
+    private List<Vector3> spawnedPositions = new List<Vector3>();
+
     void Start()
     {
         SpawnColoumns();
     }
 
-  
-
     void SpawnColoumns()
     {
-       
-        Vector3 GetRandomPointInCollider(Collider collider)//function to get the location for coin spawn
+        Collider spawnArea = GetComponent<Collider>();
+
+        if (spawnArea == null)
         {
-            Vector3 point = new Vector3
-                (
-                    Random.Range(collider.bounds.min.x, collider.bounds.max.x),//This sets the random spwan to always be on the platform
-                    Random.Range(collider.bounds.min.y, collider.bounds.max.y),
-                    Random.Range(collider.bounds.min.z, collider.bounds.max.z)
-                );
-
-            point.y = -4;
-
-            //point.y = 1;//makes the coins spawn on the ground
-            return point;
+            Debug.LogWarning("Column spawner needs a collider.");
+            return;
         }
 
+        int spawned = 0;
+        int attempts = 0;
 
-      //token amount
-
-        for (int i = 0; i < objectNo; i++)
+        while (spawned < objectNo && attempts < 100)
         {
-            GameObject score = Instantiate(coloumn);//spawns power up
-            score.name = coloumn.name;
-            score.transform.position = GetRandomPointInCollider(GetComponent<Collider>());
-            Destroy(score, coloumnDestroy);
-        }
+            attempts++;
 
-        
+            Vector3 point = new Vector3(
+                Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x),
+                columnY,
+                Random.Range(spawnArea.bounds.min.z, spawnArea.bounds.max.z)
+            );
+
+            if (IsFarEnough(point))
+            {
+                GameObject newColumn = Instantiate(coloumn, point, Quaternion.identity);
+                newColumn.name = coloumn.name;
+
+                Destroy(newColumn, columnDestroy);
+
+                spawnedPositions.Add(point);
+                spawned++;
+            }
+        }
     }
 
-
-
-    // Update is called once per frame
-    void Update()
+    bool IsFarEnough(Vector3 point)
     {
-        
+        foreach (Vector3 existingPoint in spawnedPositions)
+        {
+            if (Vector3.Distance(point, existingPoint) < minimumDistance)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

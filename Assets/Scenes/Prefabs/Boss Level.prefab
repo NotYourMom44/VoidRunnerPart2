@@ -529,9 +529,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coloumn: {fileID: 3872494053779947746, guid: ac7b244b84272754b97e8b292194735d, type: 3}
-  levelCollider: {fileID: 8491585031887489828}
-  coloumnDestroy: 20
-  objectNo: 9
+  columnDestroy: 20
+  objectNo: 6
+  columnY: -4
+  minimumDistance: 10
 --- !u!23 &8982764648640999614
 MeshRenderer:
   m_ObjectHideFlags: 0
