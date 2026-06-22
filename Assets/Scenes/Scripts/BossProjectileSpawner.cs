@@ -17,6 +17,8 @@ public class BossProjectileSpawner : MonoBehaviour
     private float attackTimer = 0f;
     private bool bossActive = false;
 
+    public AudioSource projectileSFX;
+
     private void Update()
     {
         if (player != null)
@@ -70,6 +72,11 @@ public class BossProjectileSpawner : MonoBehaviour
         {
             Debug.LogWarning("BossProjectileSpawner is missing a reference.");
             return;
+        }
+
+        if (projectileSFX != null)
+        {
+            projectileSFX.Play();
         }
 
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
