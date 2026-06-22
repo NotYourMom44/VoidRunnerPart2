@@ -18,11 +18,13 @@ public class LevelPickupSpawner : MonoBehaviour
             GameObject chosenPoint = pickupPoints[Random.Range(0, pickupPoints.Length)];
             GameObject chosenPickup = pickupPrefabs[Random.Range(0, pickupPrefabs.Length)];
 
-            Instantiate(
+            GameObject spawnedPickup = Instantiate(
                 chosenPickup,
                 chosenPoint.transform.position,
                 chosenPoint.transform.rotation
             );
+
+            spawnedPickup.SetActive(true);
         }
     }
 }

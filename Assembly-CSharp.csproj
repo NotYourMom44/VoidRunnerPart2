@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scenes\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scenes\Scripts\gameOver.cs" />
     <Compile Include="Assets\UI button pack 2\Scene\CreateObj.cs" />
+    <Compile Include="Assets\Scenes\Scripts\PickupSound.cs" />
     <Compile Include="Assets\Scenes\Scripts\powerUp.cs" />
     <Compile Include="Assets\Scenes\Scripts\pickUpSpawn.cs" />
     <Compile Include="Assets\Scenes\Scripts\PlayerSlowTime.cs" />

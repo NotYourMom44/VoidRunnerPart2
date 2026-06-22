@@ -11,7 +11,7 @@ scopes = {
 	"last_search.110DEAF1" = "h: ref=\"Assets/Scenes/Scripts/ballroll.cs\""
 	"OpenInspectorPreview.110DEAF1" = "0"
 	"currentGroup.110DEAF1" = "scene"
-	"last_search.FD7A1EDD" = "ref=\"Assets/Scenes/Scripts/powerUp.cs\""
+	"last_search.FD7A1EDD" = "ref=\"Assets/Scenes/Scripts/ShieldPickupSpawner.cs\""
 	"OpenInspectorPreview.FD7A1EDD" = "0"
 	"currentGroup.FD7A1EDD" = "all"
 }
